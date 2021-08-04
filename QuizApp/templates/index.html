@@ -1,0 +1,172 @@
+{% extends 'base.html' %} {% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h2
+      class="navbar-brand navBrand"
+      style="font-size: 30px; color: rgba(255, 255, 255, 0.1)"
+    >
+      Python Quiz
+    </h2>
+    <button
+      class="navbar-toggler"
+      type="button"
+      id="hamburger"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="{% url 'home' %}">
+            <button
+              type="button"
+              class="btn btn-secondary topicDrop"
+              style="
+                font-size: 15px;
+                font-weight: bold;
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                padding-left: 30px;
+                padding-right: 30px;
+              "
+            >
+              Home
+            </button>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <button
+            class="nav-link dropdown-toggle btn btn-secondary topicDrop"
+            href="#"
+            id="navbarDropdown"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              font-size: 15px;
+              font-weight: bold;
+              color: #fff;
+              font-family: 'Poppins', sans-serif;
+              padding-left: 30px;
+              padding-right: 30px;
+            "
+          >
+            Topics
+          </button>
+
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+            style="font-family: 'Poppins', sans-serif; font-size: 15px"
+          >
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'basic' %}"
+                style="font-weight: bold"
+                >Basic</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'datatypes' %}"
+                style="font-weight: bold"
+                >Data Types</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'operators' %}"
+                style="font-weight: bold"
+                >Operators</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'Cstatements' %}"
+                style="font-weight: bold"
+                >Conditional Statements</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'loops' %}"
+                style="font-weight: bold"
+                >Looping Statements</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'function' %}"
+                style="font-weight: bold"
+                >Functions</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="{% url 'exceptHandle' %}"
+                style="font-weight: bold"
+                >Exceptional Handling</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br />
+
+<div style="font-family: 'Poppins', sans-serif; font-weight: 900">
+  <center>
+    <h3 style="margin-top: 50px; font-size: 45px" class="home-heading">Welcome to Python Quiz!</h3>
+    <div class="lottie-div">
+      <center>
+      <lottie-player
+        src="https://assets6.lottiefiles.com/private_files/lf30_6ocpfdil.json"
+        background="transparent"
+        speed="1"
+        style="width: 75%; height: 75%"
+        loop
+        autoplay
+        class="lottie-file"
+      ></lottie-player>
+    </center>
+    </div>
+    <div>
+      <button
+      class="btn btn-success startbtn" 
+      id="stTest" 
+      style="font-size: 15px; font-weight: bold;  font-family: 'Poppins', sans-serif; box-shadow: 3px 5px 5px 0px lightslategray;"
+      >Start Test
+     </button>
+    </div>
+    
+  </center>
+</div>
+
+
+<script>
+
+  document.querySelector('#stTest').onclick = function(){
+    $('#hamburger')[0].click();
+  }
+
+  
+</script>
+
+{% endblock %}
