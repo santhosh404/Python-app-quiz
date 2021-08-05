@@ -10,6 +10,5 @@ urlpatterns = [
     path('conditionalstatements', views.con_statements, name='Cstatements'),
     path('loops', views.loops, name='loops'),
     path('functions', views.function, name='function'),
-    path('eh', views.exceptHandle, name='exceptHandle'),
-    path('result', views.Result, name='result')
+    path('eh', views.exceptHandle, name='exceptHandle')
 ]
