@@ -7,7 +7,6 @@ from .models import *
 
 # Create your views here.
 
-score = 0
 
 def home(request):
     return render(request, 'index.html')
@@ -16,7 +15,6 @@ def home(request):
 
 
 def basic(request):
-    global score
     basic = Basic.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -31,8 +29,8 @@ def basic(request):
 
                 else:
                     print(result)
-        # return render(request, 'basic.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(basic), "basic":basic})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'result.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
     
         
     return render(request, "basic.html", {
@@ -68,7 +66,6 @@ def datatypes(request):
 
 
 def operators(request):
-    global score
     operators = Operators.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -82,8 +79,8 @@ def operators(request):
 
                 else:
                     print(result)
-        # return render(request, 'operators.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(operators), "operators":operators})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'result.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
         
     return render(request, "operators.html", {
         "operators": operators
@@ -92,7 +89,6 @@ def operators(request):
 
 
 def con_statements(request):
-    global score
     conditional = Con_statements.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -106,8 +102,8 @@ def con_statements(request):
 
                 else:
                     print(result)
-        # return render(request, 'conditional.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(conditional), "conditional":conditional})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'result.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
     
         
     return render(request, "conditional.html", {
@@ -117,7 +113,6 @@ def con_statements(request):
     
 
 def loops(request):
-    global score
     loops = looping.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -131,8 +126,8 @@ def loops(request):
 
                 else:
                     print(result)
-        # return render(request, 'loop.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(loops), "loops":loops})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'result.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
     
         
     return render(request, "loop.html", {
@@ -143,7 +138,6 @@ def loops(request):
 
 
 def function(request):
-    global score
     function = functions.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -157,8 +151,8 @@ def function(request):
 
                 else:
                     print(result)
-        # return render(request, 'functions.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(function), "function":function})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'functions.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
     
         
     return render(request, "functions.html", {
@@ -170,7 +164,6 @@ def function(request):
 
 
 def exceptHandle(request):
-    global score
     ExceptHand = ExceptionHandling.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -184,8 +177,8 @@ def exceptHandle(request):
 
                 else:
                     print(result)
-        # return render(request, 'eh.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(ExceptHand), "ExceptHand":ExceptHand})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'eh.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
     
         
     return render(request, "eh.html", {
@@ -193,7 +186,3 @@ def exceptHandle(request):
     })
     return render(request, 'eh.html') 
 
-
-def Result(request):
-    print(score)
-    return render(request, 'result.html', {'score':score})
