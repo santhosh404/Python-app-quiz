@@ -42,7 +42,6 @@ def basic(request):
 
 
 def datatypes(request):
-    global score
     dtypes = DataTypes.objects.all()
     if request.method == 'POST':
         answer = request.POST
@@ -57,8 +56,8 @@ def datatypes(request):
                 else:
                     print(result)
         print(score)
-        # return render(request, 'dtypes.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(dtypes), "dtypes":dtypes})
-        return HttpResponseRedirect(reverse('result'))
+        return render(request, 'result.html', {'score':score})
+#         return HttpResponseRedirect(reverse('result'))
     
         
     return render(request, "dtypes.html", {
