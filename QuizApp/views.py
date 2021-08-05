@@ -200,4 +200,5 @@ def exceptHandle(request):
 
 
 def Result(request):
+    print(score)
     return render(request, 'result.html', {'score':score})
