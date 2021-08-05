@@ -54,7 +54,7 @@ def datatypes(request):
                 result = DataTypes.objects.filter(id = i)[0].correct_ans
                 if result == answer[i]:
                     score += 1
-
+        print(score)
                 else:
                     print(result)
         # return render(request, 'dtypes.html', {'score':score, 'ques_answered':Total_ques, 'Total_ques':len(dtypes), "dtypes":dtypes})
