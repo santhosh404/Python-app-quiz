@@ -151,7 +151,7 @@ def function(request):
 
                 else:
                     print(result)
-        return render(request, 'functions.html', {'score':score})
+        return render(request, 'result.html', {'score':score})
 #         return HttpResponseRedirect(reverse('result'))
     
         
@@ -177,7 +177,7 @@ def exceptHandle(request):
 
                 else:
                     print(result)
-        return render(request, 'eh.html', {'score':score})
+        return render(request, 'result.html', {'score':score})
 #         return HttpResponseRedirect(reverse('result'))
     
         
