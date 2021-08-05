@@ -7,13 +7,14 @@ from .models import *
 
 # Create your views here.
 
+score = 0
 
 def home(request):
     return render(request, 'index.html')
     
 
 
-score = 0
+
 def basic(request):
     global score
     basic = Basic.objects.all()
@@ -40,8 +41,6 @@ def basic(request):
     return render(request, 'basic.html')
 
 
-
-score = None
 def datatypes(request):
     global score
     dtypes = DataTypes.objects.all()
@@ -68,7 +67,7 @@ def datatypes(request):
     return render(request, 'dtypes.html')
 
 
-score=0
+
 def operators(request):
     global score
     operators = Operators.objects.all()
@@ -93,7 +92,6 @@ def operators(request):
     return render(request, 'operators.html') 
 
 
-score=0
 def con_statements(request):
     global score
     conditional = Con_statements.objects.all()
@@ -119,7 +117,6 @@ def con_statements(request):
     return render(request, 'conditional.html') 
     
 
-score =0
 def loops(request):
     global score
     loops = looping.objects.all()
@@ -146,7 +143,6 @@ def loops(request):
 
 
 
-score = 0
 def function(request):
     global score
     function = functions.objects.all()
@@ -173,7 +169,7 @@ def function(request):
 
 
 
-score = 0
+
 def exceptHandle(request):
     global score
     ExceptHand = ExceptionHandling.objects.all()
