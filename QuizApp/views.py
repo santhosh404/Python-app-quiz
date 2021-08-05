@@ -41,7 +41,7 @@ def basic(request):
 
 
 
-score = 0
+score = None
 def datatypes(request):
     global score
     dtypes = DataTypes.objects.all()
